@@ -1,0 +1,21 @@
+{
+  "name": "com.quoi.feur",
+  "version": "1.2.3-feur",
+  "displayName": "Feur",
+  "description": "This is a feur package",
+  "unity": "2022.2",
+  "unityRelease": "62f3",
+  "documentationUrl": "https://feur.com/",
+  "changelogUrl": "https://feur.feur/feur.html",
+  "licensesUrl": "https://feur.feur/feur.html",
+  "keywords": [
+    "feur",
+    "feur",
+    "feur"
+  ],
+  "author": {
+    "name": "Feur",
+    "email": "feur@feur.com",
+    "url": "https://www.feur.com"
+  }
+}
