@@ -9,7 +9,8 @@ public class LobbyUI : MonoBehaviour
     [SerializeField] GameObject connectPanel;
     [SerializeField] Button createButton, joinButton, readyButton;
     [SerializeField] TMP_InputField codeInput, nameInput;
-    [SerializeField] TMP_Text statusLabel;
+    [SerializeField] TMP_Text statusLabel, readyLabel;
+    [SerializeField] private ReadyManager _readyManager;
 
     void Awake()
     {
@@ -57,4 +58,9 @@ public class LobbyUI : MonoBehaviour
         }
         catch (Exception e) { statusLabel.text = $"Error: {e.Message}"; }
     }
+
+    private void OnEnable() => _readyManager.ReadyStateChanged += RefreshReady;
+    private void OnDisable() => _readyManager.ReadyStateChanged -= RefreshReady;
+
+    void RefreshReady() => readyLabel.text = $"{_readyManager.ReadyCount}/{_readyManager.PlayerCount}";
 }

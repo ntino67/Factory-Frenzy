@@ -7,28 +7,16 @@ using UnityEngine.SceneManagement;
 public class LobbyManager : Singleton<LobbyManager>
 {
     [SerializeField] private string gameSceneName;
+    [SerializeField] private ReadyManager readyManager;
+    
     public bool GameStarting { get; private set; }
-
-    void Start()
-    {
-        NetworkManager.Singleton.OnClientDisconnectCallback += _ => CheckAllReady();
-    }
-
-    public void CheckAllReady()
-    {
-        var nm = NetworkManager.Singleton;
-        if (!nm.IsServer || GameStarting) return;
-
-        foreach (var client in nm.ConnectedClientsList)
-        {
-            var ready = client.PlayerObject.GetComponent<PlayerReady>();
-            if (ready == null || !ready.IsReady.Value) return;   // someone isn't ready
-        }
-        StartGame();
-    }
+    
+    void OnEnable() => readyManager.AllReady += StartGame;
+    void OnDisable() => readyManager.AllReady -= StartGame;
 
     async void StartGame()
     {
+        if (GameStarting) return;
         GameStarting = true;
         CleanupLobbyObjects();
         await SessionManager.Instance.LockSession();

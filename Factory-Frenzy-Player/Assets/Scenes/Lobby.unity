@@ -1906,6 +1906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LobbyManager
   m_DelayDuplicateRemoval: 0
   gameSceneName: Example
+  readyManager: {fileID: 0}
 --- !u!4 &1337488765
 Transform:
   m_ObjectHideFlags: 0
