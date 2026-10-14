@@ -390,10 +390,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8877517574528810294, guid: 4d28f6590e91f644e9731292f51c4f2c, type: 3}
-      propertyPath: m_GazeTransform
-      value: 
-      objectReference: {fileID: 8188981519815569024}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -403,6 +399,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3456711147303856079, guid: 4d28f6590e91f644e9731292f51c4f2c, type: 3}
   m_PrefabInstance: {fileID: 4999066368187267600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6011626716325069090
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8059716620419033258}
+    m_Modifications:
+    - target: {fileID: 3055433562365713971, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_Name
+      value: Gaze Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.18895191
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.36144
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.1034137
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+--- !u!4 &3822299045694929772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7378618157167557198, guid: b84cd05e1160fe34cab2585022c8cd99, type: 3}
+  m_PrefabInstance: {fileID: 6011626716325069090}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7328228314550797354
 PrefabInstance:
@@ -556,10 +614,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3077110429099502610, guid: aa788f58037d03649911102b0771966e, type: 3}
-      propertyPath: m_GazeTransform
-      value: 
-      objectReference: {fileID: 8188981519815569024}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -650,6 +704,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5531948733902918658, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_GazeInteractor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6355494128053973299, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -662,9 +720,17 @@ PrefabInstance:
       propertyPath: m_DebounceTime
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8414914355513328826, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_Target
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6585113627354992487, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 657184242161839408, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 3822299045694929772}
     - targetCorrespondingSourceObject: {fileID: 657184242118504721, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5839875328368087366}
@@ -730,13 +796,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 657184242222895506, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
   m_PrefabInstance: {fileID: 7405910130323686810}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &8059716620419033258 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 657184242161839408, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 7405910130323686810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8059716620498252939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 657184242118504721, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-  m_PrefabInstance: {fileID: 7405910130323686810}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8188981519815569024 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1684926014057179930, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
   m_PrefabInstance: {fileID: 7405910130323686810}
   m_PrefabAsset: {fileID: 0}
