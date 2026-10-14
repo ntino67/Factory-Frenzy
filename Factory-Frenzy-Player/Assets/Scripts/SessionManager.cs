@@ -1,35 +1,59 @@
+using System;
 using System.Threading.Tasks;
 using FactoryFrenzy.Singleton;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Multiplayer;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SessionManager : Singleton<SessionManager>
 {
     public ISession Session { get; private set; }
+    
     public bool IsReady { get; private set; }
+    
     public string PlayerName { get; set; } = "";
 
     [SerializeField] private int maxPlayers;
 
+    public event Action<SessionManager> OnInitialized;
+
+
     protected override void Awake()
     {
         base.Awake();
-        if (Instance == this) DontDestroyOnLoad(gameObject);
+        
+        if (Instance == this)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     async void Start()
     {
-        await UnityServices.InitializeAsync();
-        AuthenticationService.Instance.SwitchProfile("p" + Random.Range(0, 100000));
-        await AuthenticationService.Instance.SignInAnonymouslyAsync();
-        IsReady = true;
+        try
+        {
+            await UnityServices.InitializeAsync();
+
+            AuthenticationService.Instance.SwitchProfile("p" + Random.Range(0, 100000));
+
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+
+            IsReady = true;
+
+            OnInitialized?.Invoke(this);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Unity Services initialization failed: {e}");
+        }
     }
 
     public async Task CreateSession()
     {
         var options = new SessionOptions { MaxPlayers = maxPlayers }.WithRelayNetwork();
+        
         Session = await MultiplayerService.Instance.CreateSessionAsync(options);
     }
 
